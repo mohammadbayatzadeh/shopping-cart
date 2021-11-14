@@ -14,7 +14,7 @@ const Cartreducer = (state, action) => {
             if (!state.chooseditems.find(item => item.id === action.payload.id)) {
                 state.chooseditems.push({
                     ...action.payload,
-                    count: 0
+                    count: 1
                 })
             }
             return {
@@ -56,7 +56,7 @@ const Cartreducer = (state, action) => {
         default:
             return state;
     }
-
+;
 }
 
 export const Cartcontext = createContext();

@@ -21,6 +21,7 @@ const Product = ({postData}) => {
                
                 {countCounter(state , postData.id) === 1 && <button onClick={() => dispatch({type:"REMOVE-ITEM" , payload:postData})}>remove</button> }
                 {countCounter(state , postData.id) > 1 && <button onClick={() => dispatch({type:"DECREASE" , payload:postData})}>-</button> }
+                {countCounter(state , postData.id) && <span>{countCounter(state , postData.id)}</span>}
 
                 {isInCart(state , postData.id) ?
                 <button onClick={() => dispatch({type:"INCREASE" , payload:postData})}>+</button> :

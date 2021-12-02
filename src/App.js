@@ -5,7 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Store from './components/Store';
 import ProductDetails from './components/shared/ProductDetails';
 import Navbar from './components/Navbar';
-import Cart from './components/Cart';
+import Carts from './components/Carts';
 
 //context
 import Productcontext from './context/ProductContext';
@@ -19,7 +19,7 @@ const App = () => {
         <Switch>
           <Route path="/products/:id" component={ProductDetails} />
           <Route path="/products" component={Store} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/carts" component={Carts} />
           <Redirect to="/products" />
         </Switch>
       </CartContext>

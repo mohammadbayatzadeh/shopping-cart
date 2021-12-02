@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #b5c99a;
+    -webkit-box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.54);
+    margin-bottom: 40px;
+    padding: 10px ;
+    background-color: #fff;
+}
+
+.navbar {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar a{
+    color: #718355;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all ease-in 1s;
+}
+.navbar a:hover{
+    color: #353e28;
+}
+.shopicon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.shopicon span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #718355;
+    border-radius: 50%;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    font-size: .75rem;
+    text-align: center;
+}

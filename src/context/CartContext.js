@@ -9,7 +9,7 @@ const initialState = {
 }
 const sumitems = items => {
     const counter = items.reduce((total, current) => total + current.count, 0)
-    const total = items.reduce((total, current) => total + current.count * current.price, 0)
+    const total = items.reduce((total, current) => total + current.count * current.price, 0);
     return { counter, total };
 }
 const Cartreducer = (state, action) => {
@@ -18,21 +18,21 @@ const Cartreducer = (state, action) => {
             if (!state.chooseditems.find(item => item.id === action.payload.id)) {
                 state.chooseditems.push({
                     ...action.payload,
-                    count: 1
+                    count : 1
                 })
             }
             return {
                 ...state,
                 chooseditems: [...state.chooseditems],
-                ...sumitems(state.chooseditems)
+                ...sumitems(state.chooseditems),
+                checkout: false
             }
         case "REMOVE-ITEM":
             const newchooseditem = state.chooseditems.filter(item => item.id !== action.payload.id);
             return {
                 ...state,
                 chooseditems: [...newchooseditem],
-                ...sumitems(state.chooseditems)
-
+                ...sumitems(newchooseditem)
             }
         case "INCREASE":
             const IndexA = state.chooseditems.findIndex(item => item.id === action.payload.id)
@@ -55,7 +55,7 @@ const Cartreducer = (state, action) => {
                 counter: 0,
                 total: 0,
                 checkout: true,
-                
+
             }
         case "CLEAR":
             return {

@@ -1,15 +1,15 @@
-import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 //component
-import Store from './components/Store';
-import ProductDetails from './components/shared/ProductDetails';
-import Navbar from './components/Navbar';
-import Carts from './components/Carts';
+import Store from "./components/Store";
+import ProductDetails from "./components/shared/ProductDetails";
+import Navbar from "./components/Navbar";
+import Carts from "./components/Carts";
 
 //context
-import Productcontext from './context/ProductContext';
-import CartContext from './context/CartContext';
+import CartContext from "./context/CartContext";
+import Productcontext from "./context/productcontext";
 
 const App = () => {
   return (

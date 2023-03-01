@@ -51,7 +51,6 @@
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
-    color: #718355;
     text-decoration: none;
     display: block;
     margin-top: 20px;
@@ -61,6 +60,29 @@
     color: #353e28;
 }
 
+.buttonsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em ;
+}
+.price{
+    padding: 1em;
+    color: aliceblue;
+    background-color: #718355;
+    border-radius: 16px;
+    -webkit-box-shadow: 0px 7px 41px 2px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 7px 41px 2px rgba(0, 0, 0, 0.54);
+
+}
+.backButton{
+    padding: 1em;
+    color: aliceblue;
+    background-color: #6ec7f3;
+    border-radius: 16px;
+    -webkit-box-shadow: 0px 7px 41px 2px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 7px 41px 2px rgba(0, 0, 0, 0.54);
+}
 @media only screen and (max-width : 900px) {
     .container{
         flex-direction: column;

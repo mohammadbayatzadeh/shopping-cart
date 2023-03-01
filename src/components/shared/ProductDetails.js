@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import ProductContext from "../../context/productcontext";
+import { useSelector } from "react-redux";
 
 //styles
 import styles from "./productdetails.module.css";
@@ -8,7 +8,7 @@ import styles from "./productdetails.module.css";
 
 const ProductDetails = (props) => {
   const id = props.match.params.id;
-  const products = useContext(ProductContext);
+  const products = useSelector((state) => state.productsState.products);
   const details = products[id - 1];
   const { image, title, description, price, category } = details;
   return (
@@ -18,10 +18,12 @@ const ProductDetails = (props) => {
         <div className={styles.info}>
           <h2>{title}</h2>
           <p>{description}</p>
-          <div>
-            <p> price: {price} $</p>
-            <p>category: {category}</p>
-            <Link to="/products">Back To Store</Link>
+          <p>category: {category}</p>
+          <div className={styles.buttonsContainer}>
+            <div className={styles.price}>{price}</div>
+            <Link to="/products" className={styles.backButton}>
+              Back To Store
+            </Link>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@
     margin: 20px;
     border-radius: 20px;
     border: 1px solid #353E28;
-    transition: all ease-in .7s;
+    transition: all ease-in .3s;
 }
 
 .product:hover {

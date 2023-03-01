@@ -1,22 +1,35 @@
-import React, { useContext } from "react";
-import { Productcontext } from "../context/productcontext";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import ReactLoading from "react-loading";
 
 //components
 import Product from "./shared/Product";
 
-//context
+//Redux
+import { fetchProducts } from "../redux/products/productsAction";
 
 //styles
 import styles from "./store.module.css";
 
 const Store = () => {
-  const products = useContext(Productcontext);
+  const dispatch = useDispatch();
+  const productsState = useSelector((state) => state.productsState);
+
+  useEffect(() => {
+    if (!productsState.products.length) dispatch(fetchProducts());
+  }, []);
 
   return (
     <div className={styles.container}>
-      {products.map((item) => (
-        <Product key={item.id} postData={item} />
-      ))}
+      {productsState.loading ? (
+        <ReactLoading type={'spinningBubbles'} color={'black'} height={'20%'} width={'20%'} />
+      ) : productsState.error ? (
+        <h2>something went wrong...</h2>
+      ) : (
+        productsState.products.map((product) => (
+          <Product key={product.id} postData={product} />
+        ))
+      )}
     </div>
   );
 };

@@ -22,7 +22,7 @@ const fetchProductsFailed = (error) => {
 
 export const fetchProducts = () => {
   return (dispatch) => {
-    dispatch(fetchProductsRequest);
+    dispatch(fetchProductsRequest());
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => {

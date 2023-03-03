@@ -1,15 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 //functions
 import { shorten, isInCart, countCounter } from "../../functions/function";
 
-//context
+//Actions
+import {
+  addItem,
+  removeItem,
+  increase,
+  decrease,
+} from "../../redux/cart/cartAction";
 
 //styles
 import styles from "./product.module.css";
 
 const Product = ({ postData }) => {
+  const state = useSelector((state) => state.cartState);
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.product}>
       <img src={postData.image} alt="product" />
@@ -19,13 +29,11 @@ const Product = ({ postData }) => {
         <Link to={`/products/${postData.id}`} className={styles.details}>
           details
         </Link>
-        {/* <div>
+        <div className={styles.balance}>
           {countCounter(state, postData.id) === 1 && (
             <button
               className={styles.buttons}
-              onClick={() =>
-                dispatch({ type: "REMOVE-ITEM", payload: postData })
-              }
+              onClick={() => dispatch(removeItem(postData))}
             >
               remove
             </button>
@@ -33,7 +41,7 @@ const Product = ({ postData }) => {
           {countCounter(state, postData.id) > 1 && (
             <button
               className={styles.buttons}
-              onClick={() => dispatch({ type: "DECREASE", payload: postData })}
+              onClick={() => dispatch(decrease(postData))}
             >
               -
             </button>
@@ -45,19 +53,19 @@ const Product = ({ postData }) => {
           {isInCart(state, postData.id) ? (
             <button
               className={styles.buttons}
-              onClick={() => dispatch({ type: "INCREASE", payload: postData })}
+              onClick={() => dispatch(increase(postData))}
             >
               +
             </button>
           ) : (
             <button
               className={styles.buttons}
-              onClick={() => dispatch({ type: "ADD-ITEM", payload: postData })}
+              onClick={() => dispatch(addItem(postData))}
             >
               Add To Cart
             </button>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

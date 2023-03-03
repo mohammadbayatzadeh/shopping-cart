@@ -10,8 +10,7 @@
     background-color: #fff;
     margin: 20px;
     border-radius: 20px;
-    border: 1px solid #353E28;
-    transition: all ease-in .3s;
+    border: 1px solid #20222d;
 }
 
 .product:hover {
@@ -30,58 +29,59 @@
     font-size: 1.5rem;
     font-weight: 600;
     padding: 10px;
-    color: #718355;
+    color: #20222d;
 }
 
 .price {
     font-size: 1rem;
     font-weight: 600;
     padding: 5px 10px;
-    color: #718355;
+    color: #20222d;
 }
 
 .buttons_container {
     display: flex;
     justify-content: space-between;
+    align-items: center !important;
     padding: 10px 15px;
 }
 
 .details {
     font-size: 1rem;
     font-weight: 600;
-    /* padding: 15px; */
     cursor: pointer;
-    color: #718355;
+    color: #20222d;
     text-decoration: none;
-    transition: all ease-in 1s;
 }
 .details:hover{
-    color: #353e28;
+    color: #55586b;
 
 }
-
+.balance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .buttons {
-    background-color: #718355;
-    color: #fff;
+    background-color: #bfc4d9;
+    color: #20222d  ;
     font-size: .7rem;
     font-weight: 400;
     padding: 5px;
-    /* margin-bottom: 10px; */
-    outline: none;
-    border: 1px solid #353E28;
+    border: 1px solid #20222d;
     border-radius: 5px;
-    transition: all ease-in .7s;
+    transition: all linear .7s;
 }
 .buttons:hover{
-    background-color:#353e28;
+    background-color:#4a4e66;
 }
 
 .buttons_container span {
-    background-color: #718355;
-    border-radius: 3px;
-    color: #fff;
-    margin: 0 5px;
+    color: #20222d;
+    margin: 0 3px;
+    font-weight: 500;
     font-size: 1rem;
-    padding: 2px 5px;
-    
+    padding: 5px;
+    transition: all linear .7s;
+  
 }

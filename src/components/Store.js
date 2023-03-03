@@ -22,7 +22,12 @@ const Store = () => {
   return (
     <div className={styles.container}>
       {productsState.loading ? (
-        <ReactLoading type={'spinningBubbles'} color={'black'} height={'20%'} width={'20%'} />
+        <ReactLoading
+          type={"spinningBubbles"}
+          color={"black"}
+          height={"20%"}
+          width={"20%"}
+        />
       ) : productsState.error ? (
         <h2>something went wrong...</h2>
       ) : (

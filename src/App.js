@@ -14,11 +14,11 @@ import store from "./redux/Store";
 const App = () => {
   return (
     <Provider store={store}>
-      {/* <Navbar /> */}
+      <Navbar />
       <Switch>
         <Route path="/products/:id" component={ProductDetails} />
         <Route path="/products" component={Store} />
-        {/* <Route path="/carts" component={Carts} /> */}
+        <Route path="/carts" component={Carts} />
         <Redirect to="/products" />
       </Switch>
     </Provider>

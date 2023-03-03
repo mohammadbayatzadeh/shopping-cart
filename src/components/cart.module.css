@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border: 1px solid #353E28;
+    border: 1px solid #20222d;
     align-items: center;
     background-color: #fff;
     border-radius: 20px;
@@ -22,21 +22,21 @@
 }
 
 .container h3 {
-    color: #718355;
+    color: #20222d;
     font-size: 1.5rem;
     font-weight: 500;
     padding: 10px;
 }
 
 .container h4 {
-    color: #718355;
+    color: #20222d;
     font-size: 1.2rem;
     font-weight: 400;
     padding: 10px;
 }
 
 .container span {
-    color: #718355;
+    color: #20222d;
     font-size: 1.2rem;
     font-weight: 400;
     padding: 10px;
@@ -47,14 +47,14 @@
     width:100px ;
 }
 .buttons {
-    background-color: #718355;
-    color: #fff;
+    background-color: #bfc4d9;
+    color: #20222d;
     font-size: .7rem;
     font-weight: 400;
     padding: 5px;
     margin: 0 5px;
     outline: none;
-    border: 1px solid #353E28;
+    border: 1px solid #20222d;
     border-radius: 5px;
     transition: all ease-in .7s;
 }

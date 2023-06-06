@@ -24,7 +24,8 @@ const Product = ({ postData }) => {
     <div className={styles.product}>
       <img src={postData.image} alt="product" />
       <h2 className={styles.title}>{shorten(postData.title)}</h2>
-      <p className={styles.price}>{postData.price} $</p>
+      <h4 className={styles.cat}>{postData.category}</h4>
+      <p className={styles.price}>Price: {postData.price} $</p>
       <div className={styles.buttons_container}>
         <Link to={`/products/${postData.id}`} className={styles.details}>
           details

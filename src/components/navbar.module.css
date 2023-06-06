@@ -1,48 +1,48 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 .container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    border-bottom: 1px solid #20222d;
-    -webkit-box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.54);
-    box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.54);
-    margin-bottom: 40px;
-    padding: 10px ;
-    background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #213555;
+  -webkit-box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.54);
+  margin-bottom: 40px;
+  padding: 10px;
+  background-color: #ffffff7a;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: fixed;
 }
 
 .navbar {
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.navbar a{
-    color: #20222d;
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: 600;
-    transition: all ease-in 1s;
+.navbar a {
+  color: #213555;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all ease-in 1s;
 }
 
 .shopicon {
-    width: 40px;
-    height: 40px;
-    position: relative;
+  width: 40px;
+  height: 40px;
+  position: relative;
 }
-.shopicon span{
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #20222d;
-    border-radius: 50%;
-    color: #fff;
-    width: 15px;
-    height: 15px;
-    font-size: .75rem;
-    text-align: center;
+.shopicon span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #213555;
+  border-radius: 50%;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

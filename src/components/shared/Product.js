@@ -19,7 +19,6 @@ import styles from "./product.module.css";
 const Product = ({ postData }) => {
   const state = useSelector((state) => state.cartState);
   const dispatch = useDispatch();
-
   return (
     <div className={styles.product}>
       <img src={postData.image} alt="product" />

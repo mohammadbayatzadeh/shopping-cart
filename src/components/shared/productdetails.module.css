@@ -81,4 +81,7 @@
   .container {
     flex-direction: column;
   }
+  .container img {
+    width: 90%;
+  }
 }

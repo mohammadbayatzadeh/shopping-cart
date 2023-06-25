@@ -4,11 +4,13 @@ import { useSelector } from "react-redux";
 
 //styles
 import styles from "./productdetails.module.css";
-//context
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const ProductDetails = (props) => {
-  const id = props.match.params.id;
+  const { id } = props.match.params;
+  const history = useHistory();
   const products = useSelector((state) => state.productsState.products);
+  products.length === 0 && history.replace("/products");
   const details = products[id - 1];
   const { image, title, description, price, category } = details;
   return (

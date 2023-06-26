@@ -1,34 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import ReactLoading from "react-loading";
+import { fetchProducts } from "../../redux/products/productsAction";
 
 //styles
 import styles from "./productdetails.module.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const ProductDetails = (props) => {
   const { id } = props.match.params;
-  const history = useHistory();
-  const products = useSelector((state) => state.productsState.products);
-  products.length === 0 && history.replace("/products");
-  const details = products[id - 1];
-  const { image, title, description, price, category } = details;
+  const [loading, seetLoading] = useState(true);
+  const dispatch = useDispatch();
+  const productsState = useSelector((state) => state.productsState);
+  const product = productsState.products[id - 1] || {};
+
+  useEffect(() => {
+    document.title = product.title ? product.title : "loading";
+    if (!productsState.products.length) dispatch(fetchProducts());
+  }, [loading]);
+
   return (
     <div className={styles.maincontainer}>
-      <div className={styles.container}>
-        <img src={image} alt="product" />
-        <div className={styles.info}>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <p>category: {category}</p>
-          <div className={styles.buttonsContainer}>
-            <div className={styles.price}>{price} $</div>
-            <Link to="/products" className={styles.backButton}>
-              Back To Store
-            </Link>
+      {productsState.loading ? (
+        <ReactLoading
+          type={"spinningBubbles"}
+          color={"black"}
+          height={"20%"}
+          width={"20%"}
+        />
+      ) : productsState.error ? (
+        <h2>something went wrong...</h2>
+      ) : (
+        <div className={styles.container}>
+          <img src={product.image} alt="product" />
+          <div className={styles.info}>
+            <h2>{product.title}</h2>
+            <p>{product.description}</p>
+            <p>category: {product.category}</p>
+            <div className={styles.buttonsContainer}>
+              <div className={styles.price}>{product.price} $</div>
+              <Link to="/products" className={styles.backButton}>
+                Back To Store
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -14,6 +14,10 @@ import styles from "./carts.module.css";
 const Carts = () => {
   const state = useSelector((state) => state.cartState);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    document.title = "Cart";
+  }, []);
 
   return (
     <div className={styles.maincontainer}>

@@ -16,6 +16,7 @@ const Store = () => {
   const productsState = useSelector((state) => state.productsState);
 
   useEffect(() => {
+    document.title = "Shop Cart Project";
     if (!productsState.products.length) dispatch(fetchProducts());
   }, []);
 

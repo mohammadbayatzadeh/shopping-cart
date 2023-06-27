@@ -1,9 +1,8 @@
 .maincontainer {
   padding: 100px;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: #f5efe7;
 }
 .sidebar {
   width: 300px;
@@ -35,6 +34,9 @@
   display: block;
   margin-top: 20px;
   transition: all ease-in 1s;
+}
+.sidebar ul{
+  list-style: none;
 }
 .buttons {
   background-color: #bfc4d9;

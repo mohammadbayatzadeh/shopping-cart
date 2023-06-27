@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ReactLoading from "react-loading";
@@ -9,7 +9,6 @@ import styles from "./productdetails.module.css";
 
 const ProductDetails = (props) => {
   const { id } = props.match.params;
-  const [loading, seetLoading] = useState(true);
   const dispatch = useDispatch();
   const productsState = useSelector((state) => state.productsState);
   const product = productsState.products[id - 1] || {};
@@ -17,7 +16,7 @@ const ProductDetails = (props) => {
   useEffect(() => {
     document.title = product.title ? product.title : "loading";
     if (!productsState.products.length) dispatch(fetchProducts());
-  }, [loading]);
+  }, []);
 
   return (
     <div className={styles.maincontainer}>

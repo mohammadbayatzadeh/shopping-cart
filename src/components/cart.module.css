@@ -2,7 +2,7 @@
   width: 800px;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #20222d;
   align-items: center;
   background-color: #d8c4b6;
@@ -13,6 +13,9 @@
 .container img {
   width: 150px;
   height: 150px;
+  border: 1px solid #20222d;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .container h3 {

@@ -10,6 +10,7 @@ import { checkout, clear } from "../redux/cart/cartAction";
 
 //styles
 import styles from "./carts.module.css";
+import { shorten } from "../functions/function";
 
 const Carts = () => {
   const state = useSelector((state) => state.cartState);
@@ -30,7 +31,12 @@ const Carts = () => {
         {state.counter > 0 && (
           <div>
             <p>Total Items: {state.counter}</p>
-            <p>Total price: {state.total}</p>
+            <ul>
+              {state.chooseditems.map((item) => (
+                <li>{shorten(item.title)}  = ${item.price} *{item.count} = ${Math.floor(item.price*item.count)} </li>
+              ))}
+            </ul>
+            <p>Total price: ${Math.floor(state.total)}</p>
             <button
               className={styles.buttons}
               onClick={() => dispatch(clear())}

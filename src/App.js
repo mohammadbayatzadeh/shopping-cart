@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 
 //component
@@ -15,12 +15,12 @@ const App = () => {
   return (
     <Provider store={store}>
       <Navbar />
-      <Switch>
-        <Route path="/products/:id" component={ProductDetails} />
-        <Route path="/products" component={Store} />
-        <Route path="/carts" component={Carts} />
-        <Redirect to="/products" />
-      </Switch>
+      <Routes>
+        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/products" element={<Store />} />
+        <Route path="/carts" element={<Carts />} />
+        <Route path="/*" element={<Navigate to="/products" />} />
+      </Routes>
     </Provider>
   );
 };

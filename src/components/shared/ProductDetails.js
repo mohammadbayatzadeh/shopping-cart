@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ReactLoading from "react-loading";
 import { fetchProducts } from "../../redux/products/productsAction";
@@ -7,8 +7,9 @@ import { fetchProducts } from "../../redux/products/productsAction";
 //styles
 import styles from "./productdetails.module.css";
 
-const ProductDetails = (props) => {
-  const { id } = props.match.params;
+const ProductDetails = () => {
+  const params = useParams();
+  const { id } = params;
   const dispatch = useDispatch();
   const productsState = useSelector((state) => state.productsState);
   const product = productsState.products[id - 1] || {};
